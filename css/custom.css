@@ -1,0 +1,201 @@
+*{
+    padding: 0px;
+    margin: 0px;
+    box-sizing: border-box;
+}
+:root {
+    --blue: #203486;
+
+}
+h1,h2,h3,h4,h5,h6 {
+    color: var( --blue );
+    text-align: center;
+    font-size: 3rem;
+    position: absolute;
+    top: 10%;
+    left: 0px;
+    right: 0px;
+    margin: 0 auto;
+}
+.section{
+    width: 100%;
+    height: 100vh;
+}
+#home{
+    /* background-color: red; */
+    display: flex;
+    position: relative;
+}
+#homefuji{
+    width: 100%;
+    min-width: 800px;
+    object-fit: contain;
+    position: absolute;
+    bottom: 0px;
+    left: 0px;
+    right: 0px;
+    margin: 0 auto;
+}
+#info{
+    background-image: url('../img/japanmap.png');
+    background-size: 50%;
+    background-repeat: no-repeat;
+    background-position: right bottom;
+}
+.infopage{
+    display: block;
+    width: 70%;
+    position: relative;
+    left: 10%;
+    
+}
+#trails{
+    background-image: url('../img/m8bimq0000003td4.jpeg');
+    background-repeat: no-repeat;
+    background-position: bottom right;
+    /* display: flex; */
+    /* flex-direction:column; */
+}
+
+#yoshidatrails {
+    background-color: yellow;
+}
+
+#trailsbt{
+    display: flex;
+    justify-content: center;
+    position: absolute;
+    top: 20%;
+    left: 20%;
+}
+
+.trail_box{
+    display: block;
+    height: 50vh;
+    width: 50vw;
+    position: absolute;
+    top: 30%;
+    left: 10%;
+    /* background-color: red; */
+}
+input[type=radio]{
+    display: none;
+}
+#trails img{
+    width: 5%;
+}
+
+.travelbox{
+    width: 30%;
+    height: 350px;
+    display: block;
+    border: 1px solid #999;
+    border-radius: 20px;
+    margin: 0 20px;
+    text-align: center;
+}
+figure img{
+    width: 95%;
+    
+}
+
+
+#myheader{
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+}
+#fujimountain{
+    width: 100%;
+    position: absolute;
+    bottom: 0vh;
+    right: 0;
+    left: 0;
+    z-index: 2;
+    margin: 0 auto;
+    overflow: hidden;
+}
+#headername{
+    width: 30vw;
+    position: absolute;
+    right: 0;
+    left: 0;
+    bottom: 40vh;
+    margin: 0 auto;
+    z-index: 1;
+    animation: NameRise 5s 2s;
+    /* 動畫停在最後一個位置 */
+    animation-fill-mode:forwards; 
+}
+@keyframes NameRise {
+    from{bottom: 40vh;}
+    to{bottom: 60vh;}
+    
+}
+#sun{
+    width: 50vw;
+    position: absolute;
+    z-index: 0;
+    right: 0;
+    left: 0;
+    bottom: -30vh;
+    margin: 0 auto;
+    animation: SunRise 5s 2s;
+    animation-fill-mode:forwards;
+}
+
+@keyframes SunRise {
+    from { bottom: -30vh; }
+    to { bottom: -8vh; }
+}
+
+.headercloud{
+    width: 18vw;
+    position: absolute;
+    z-index: 3;
+}
+
+#leftcloud{
+    bottom: 12vh;
+    left: 20vw;
+    animation: MoveToLeft 5s 2s ;
+    animation-fill-mode:forwards;
+}
+
+@keyframes MoveToLeft {
+    from { left: 20vw; }
+    to { left: 5vw; }
+}
+#rightcloud{
+    bottom: 10vh;
+    right: 20vw;
+    animation: MoveToRight 5s 2s ;
+    animation-fill-mode:forwards;
+}
+
+@keyframes MoveToRight {
+    from { right: 20vw; }
+    to { right: 5vw; }
+}
+
+
+.section{
+    background-color: #ffffff;
+}
+
+
+#shinkansen{
+    height: 5vh;
+    position: absolute;
+    /* width: 100%; */
+    bottom: 0;
+    z-index: 3;
+    right: -100vw;
+    animation: Rail 10s 2s ;
+    animation-fill-mode:forwards;
+}
+
+@keyframes Rail {
+    from { right: -100vw; }
+    to { right: 100vw; }
+}

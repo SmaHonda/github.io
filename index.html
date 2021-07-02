@@ -1,13 +1,119 @@
 <!DOCTYPE html>
-<html>
-  <head>
-    <meta charset="utf-8">
-    <title>司馬宏達</title>
-  </head>
-  <body>
-    <h1>Hello,I'm Smahonda!</h1>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./css/fullpage.css">
+    <link rel="stylesheet" href="./css/custom.css">
+    <link rel="stylesheet" href="./css/bootstrap.css">
+    <script src="./js/fullpage.js"></script>
+    <script src="./js/custom.js"></script>
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
+    <script src="js/bootstrap.js"></script>
+    <title>富士登山</title>
+</head>
+<body>
+
+    <div id="fullpage">
+        <!-- <div id="home" class="section">
+            <h1>富士登山 GO!</h1>
+            <img id="homefuji" src="./img/home.png" alt="">
+        </div> -->
+        <div id="myheader" class="section">
+            <img id="fujimountain" src="./img/1x/fujimountain.png" alt="">
+            <img id="leftcloud" class="headercloud" src="./img/1x/cloud_left.png" alt="">
+            <img id="rightcloud" class="headercloud" src="./img/1x/cloud_right.png" alt="">
+            <img id="headername" src="./img/1x/title.png" alt="">
+            <img id="sun" src="./img/1x/sun.png" alt="">
+            <img id="shinkansen" src="./img/1x/shinkansen_2.png" alt="">
+        </div>
+        <div id="info" class="section">
+            <h1>登山資訊</h1>
+            <div class="infopage">
+                <p>
+                    日語：ふじさん<br>
+                    地理位置：橫跨靜岡縣和山梨縣
+                    海拔：主峰海拔3776公尺
+                    氣溫：隨著高度上升氣溫也會逐漸下降，夜晚到日出之前會降到5度以下
+                    特色：一座活火山，火山口直徑約800公尺，山頂於冬季積雪，直至次年6、7月才會融化
+                    最高峰：劍峰 3776公尺（也是日本最高峰）
+                    重要性：於2013年6月22日正式獲選列入「世界文化遺產」，也是「日本第17個世界遺產」，在日本也列入「日本百名山」之一，同時也是「日本三名山」之一
+                </p>
+            </div>
+        </div>
+        <div id="trails" class="section">
+            <h3>登山路線</h3>
+            <div id="trailsbt">
+                <div id="yoshida" class="trailsbt">
+                    <input type="radio" id="yoshidatrails">
+                    <label for="yoshidatrails" id="yoshidabt"><img src="./img/trail_y.png" alt="">吉田路線</label>
+                </div>
+                <div id="subashiri" class="trailsbt">
+                    <input type="radio" id="subashiritrails">
+                    <label for="subashiritrails"><img src="./img/trail_r.png" alt="">須走路線</label>
+                    
+                </div>
+                <div id="gotemba" class="trailsbt">
+                    <input type="radio" id="gotembatrails">
+                    <label for="gotembatrails"><img src="./img/trail_g.png" alt="">吉田路線</label>
+                    
+                </div>
+                <div id="fujinomiya" class="trailsbt">
+                    <input type="radio" id="fujinomiyatrails">
+                    <label for="fujinomiyatrails"><img src="./img/trail_b.png" alt="">吉田路線</label>
+                </div>
+            </div>
+
+            <div id="" class="trail_box">吉田路線是</div>
+            <div id="" class="trail_box">須走路線是</div>
+
+        </div>
+        <div id="tool" class="section">
+            <h3>登山前準備項目</h3>
+
+        </div>
+        <div id="todo" class="section">
+            <h3>登富士山必做的事</h3>
+
+        </div>
+        <div id="dontdo" class="section">
+            <h3>登富士山不能做的事</h3>
+
+        </div>
+        <div id="medias" class="section">
+
+        </div>
+        <div id="traffic" class="section">
+            <h3>前往富士山交通方式</h3>
+
+        </div>
+        <div id="qa" class="section">
+
+        </div>
+        <div id="travelaround" class="section">
+            <h3>富士山周邊景點</h3>
+            <div class="travelbox">
+                <figure><img src="./img/IMG_0978.JPG" alt=""></figure>
+                <figcaption>忍也八海</figcaption>
+            </div>
+
+        </div>
+        <div id="" class="section">
+
+        </div>
+    </div>
+    <!-- <footer class="section"> -->
+
+    <!-- </footer> -->
     <script>
-        alert('Hello , Nice to meet you!');
+        // alert('test')
+        new fullpage('#fullpage', {
+        //options here
+        autoScrolling:true,
+        scrollHorizontally: true
+        });
     </script>
-  </body>
+</body>
 </html>
