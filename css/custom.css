@@ -115,6 +115,9 @@ figure img{
     margin: 0 auto;
     overflow: hidden;
 }
+
+
+
 #headername{
     width: 30vw;
     position: absolute;
@@ -132,23 +135,25 @@ figure img{
     to{bottom: 60vh;}
     
 }
-#sun{
-    width: 50vw;
-    position: absolute;
-    z-index: 0;
-    right: 0;
-    left: 0;
-    bottom: -30vh;
-    margin: 0 auto;
-    animation: SunRise 5s 2s;
-    animation-fill-mode:forwards;
-}
 
-@keyframes SunRise {
-    from { bottom: -30vh; }
-    to { bottom: -8vh; }
-}
+@media (min-width: 1200px) { 
+    #sun{
+        width: 50vw;
+        position: absolute;
+        z-index: 0;
+        right: 0;
+        left: 0;
+        bottom: -30vh;
+        margin: 0 auto;
+        animation: SunRise 5s 2s;
+        animation-fill-mode:forwards;
+    }
 
+    @keyframes SunRise {
+        from { bottom: -30vh; }
+        to { bottom: -8vh; }
+    }
+}
 .headercloud{
     width: 18vw;
     position: absolute;
@@ -199,3 +204,32 @@ figure img{
     from { right: -100vw; }
     to { right: 100vw; }
 }
+
+
+@media (max-width: 575.99px) { 
+    #sun{    
+        width: 50vw;
+        position: absolute;
+        z-index: 0;
+        right: 0;
+        left: 0;
+        bottom: -15vh;
+        margin: 0 auto;
+        animation: SunRise_s 5s 2s;
+        animation-fill-mode:forwards;
+    }
+
+    @keyframes SunRise_s {
+            from { bottom: -10vh; }
+            to { bottom: 10vh; }
+
+    }
+ }
+
+/* @media (min-width: 576px) and (max-width: 767.99px) { ... }
+
+@media (min-width: 768px) and (max-width: 991.99px) { ... }
+
+@media (min-width: 992px) and (max-width: 1199.99px) { ... }
+
+@media (min-width: 1200px) { ... } */
