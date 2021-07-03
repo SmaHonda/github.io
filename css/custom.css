@@ -4,7 +4,7 @@
     box-sizing: border-box;
 }
 :root {
-    --blue: #203486;
+    --blue: #2b72b5;
 
 }
 h1,h2,h3,h4,h5,h6 {
@@ -104,16 +104,20 @@ figure img{
     width: 100vw;
     height: 100vh;
     display: flex;
-    /* text-align:center; */
 }
 
 
+.section{
+    background-color: #ffffff;
+}
 
 
+.headercloud , #shinkansen , #sun , #fujimountain , #headerlet , #headergo{
+    position: absolute;
+}
 
 .headercloud{
-    width: 18vw;
-    position: absolute;
+    width: 20vw;
     z-index: 3;
 }
 
@@ -134,46 +138,18 @@ figure img{
     animation: MoveToRight 5s 2s ;
     animation-fill-mode:forwards;
 }
-
 @keyframes MoveToRight {
     from { right: 20vw; }
     to { right: 5vw; }
 }
 
-
-.section{
-    background-color: #ffffff;
-}
-
-
 #shinkansen{
     height: 5vh;
-    position: absolute;
-    bottom: 0;
+    bottom: 0vh;
     z-index: 3;
-    right: -100vw;
-    animation: Rail 10s 2s ;
-    animation-fill-mode:forwards;
 }
-
-@keyframes Rail {
-    from { right: -100vw; }
-    to { right: 100vw; }
-}
-
-
-#headername{
-    position: absolute;
-    right: 0;
-    left: 0;
-    margin: 0 auto;
-    z-index: 1;
-
-}
-
 
 #sun{
-    position: absolute;
     z-index: 0;
     right: 0;
     left: 0;
@@ -182,23 +158,41 @@ figure img{
 
 #fujimountain{
     z-index: 2;
-    position: absolute;
     bottom: 0vh;
-    
 }
+
+#headerlet , #headergo{
+    opacity: 0;
+}
+
+#fujiLivecamera{
+    width: 560px;
+    height: 315px;
+    position: absolute;
+    right: 0;
+    left: 0;
+    margin: 0 auto;
+ }
+
 @media (min-width: 1200px) { 
-    #headername{
-        width: 30vw;
-        bottom: 40vh;
-        animation: NameRise 5s 2s;
-        /* 動畫停在最後一個位置 */
+    #headerlet , #headergo{
+        width: 20vw;
+        top: 3vh;
+        animation: letgo_l 5s 2s;
         animation-fill-mode:forwards; 
     }
-    @keyframes NameRise {
-        from{bottom: 40vh;}
-        to{bottom: 60vh;}
-        
+    #headerlet{
+        left: 3vw;
     }
+    #headergo{
+        left: 12vw;
+    }
+    @keyframes letgo_l {
+        0% {opacity: 0;}
+        40% {opacity: 0;}
+        100% {opacity: 1;}
+    }
+    
     #fujimountain{
         width: 100%;
         right: 0;
@@ -215,20 +209,35 @@ figure img{
         from { bottom: -30vh; }
         to { bottom: 5vh; }
     }
+    #shinkansen{
+        right: -100vw;
+        animation: Rail 10s 2s ;
+        animation-fill-mode:forwards;
+    }
+    @keyframes Rail {
+        from { right: -100vw; }
+        to { right: 100vw; }
+    }
 }
 
 @media (min-width: 576px) and (max-width: 1199.99px) { 
-    #headername{
-        width: 45vw;
-        bottom: 10vh;
-        animation: NameRise 5s 2s;
-        /* 動畫停在最後一個位置 */
+    #headerlet , #headergo{
+        width: 28vw;
+        animation: letgo_m 5s 2s;
         animation-fill-mode:forwards; 
     }
-    @keyframes NameRise {
-        from{bottom: 10vh;}
-        to{bottom: 40vh;}
-        
+    #headerlet{
+        left: 5vw;
+        top: 3vh;
+    }
+    #headergo{
+        left: 15vw;
+        top: 7vh;
+    }
+    @keyframes letgo_m {
+        0% {opacity: 0;}
+        40% {opacity: 0;}
+        100% {opacity: 1;}
     }
     #fujimountain{
         width: 100%;
@@ -244,23 +253,40 @@ figure img{
     }
     @keyframes SunRise_m {
         from { bottom: -30vh; }
-        to { bottom: 10vh; }
+        to { bottom: 8vh; }
+    }
+    #shinkansen{
+        right: -165%;
+        animation: Rail_m 10s 2s ;
+        animation-fill-mode:forwards;
+    }
+    @keyframes Rail_m {
+        from { right: -165%; }
+        to { right: 100vw; }
     }
 }
 
 
 @media (max-width: 575.99px) { 
-    #headername{
-        width: 70vw;
-        bottom: 20vh;
-        animation: NameRise_s 5s 2s;
-        /* 動畫停在最後一個位置 */
+
+    #headerlet , #headergo{
+        width: 50vw;
+        transform: rotate(12.5deg);
+        animation: letgo_s 5s 2s;
         animation-fill-mode:forwards; 
     }
-    @keyframes NameRise_s {
-        from{bottom: 20vh;}
-        to{bottom: 35vh;}
-        
+    #headerlet{
+        left: 15vw;
+        top: 8vh;
+    }
+    #headergo{
+        top: 15vh;
+        left: 35vw;
+    }
+    @keyframes letgo_s {
+        0% {opacity: 0;}
+        40% {opacity: 0;}
+        100% {opacity: 1;}
     }
     #fujimountain{
         width: 180%;
@@ -273,15 +299,21 @@ figure img{
         animation-fill-mode:forwards;
     }
     @keyframes SunRise_s {
-            from { bottom: -15vh; }
-            to { bottom: 18vh; }
+        from { bottom: -15vh; }
+        to { bottom: 8vh; }
+    }
+    #shinkansen{
+        right: -200%;
+        animation: Rail_s 10s 2s ;
+        animation-fill-mode:forwards;
+    }
+    @keyframes Rail_s {
+        from { right: -200%; }
+        to { right: 100vw; }
+    }
+    #fujiLivecamera{
+        width: 312px;
+        height: 175.5px;
     }
  }
 
-/* @media (min-width: 576px) and (max-width: 767.99px) { ... }
-
-@media (min-width: 768px) and (max-width: 991.99px) { ... }
-
-@media (min-width: 992px) and (max-width: 1199.99px) { ... }
-
-@media (min-width: 1200px) { ... } */
