@@ -8,30 +8,57 @@
     <link rel="stylesheet" href="./css/custom.css">
     <link rel="stylesheet" href="./css/bootstrap.css">
     <script src="./js/fullpage.js"></script>
-    <script src="./js/custom.js"></script>
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
     <script src="js/bootstrap.js"></script>
+    <script src="./js/custom.js" defer></script>
+    
     <title>富士登山</title>
 </head>
 <body>
-
+    
+    <!-- <div id="navbar">
+        <div class="navline"> </div>
+        <div id="navPage1" class="mynavcss">
+            <div id="navPageCircle1" class="navcircle"></div>
+            <button href="#myheader"> 首頁</button>
+        </div>
+        <div id="navPage2" class="mynavcss">
+            <div id="navPageCircle2" class="navcircle"></div>
+            <button href="#info">介紹</button>
+        </div>
+        <div id="navPage3" class="mynavcss">
+            <div id="navPageCircle3" class="navcircle"></div>
+            <button href="#info">登山路線</button>
+        </div>
+        <div id="navPage4" class="mynavcss">
+            <div id="navPageCircle4" class="navcircle"></div>
+            <button href="#info">準備項目</button>
+        </div>
+        <div id="navPage5" class="mynavcss">
+            <div id="navPageCircle5" class="navcircle"></div>
+            <button href="#info">必做的事</button>
+        </div>
+    </div> -->
     <div id="fullpage">
         <!-- <div id="home" class="section">
             <h1>富士登山 GO!</h1>
             <img id="homefuji" src="./img/home.png" alt="">
         </div> -->
-        <div id="myheader" class="section">
-            <img id="fujimountain" src="./img/1x/fujimountain.png" alt="">
-            <img id="leftcloud" class="headercloud" src="./img/1x/cloud_left.png" alt="">
-            <img id="rightcloud" class="headercloud" src="./img/1x/cloud_right.png" alt="">
-            <img id="sun" src="./img/1x/sun.png" alt="">
-            <img id="shinkansen" src="./img/1x/shinkansen_2.png" alt="">
-            <img id="headerlet" src="./img/1x/let.png" alt="">
-            <img id="headergo" src="./img/1x/go.png" alt="">
+        <div id="myheader" class="section" data-tooltip="Home">
+            <div class="intro">
+
+                <img id="fujimountain" src="./img/1x/fujimountain.png" alt="">
+                <img id="leftcloud" class="headercloud" src="./img/1x/cloud_left.png" alt="">
+                <img id="rightcloud" class="headercloud" src="./img/1x/cloud_right.png" alt="">
+                <img id="sun" src="./img/1x/sun1.png" alt="">
+                <img id="shinkansen" src="./img/1x/shinkansen_2.png" alt="">
+                <img id="headerlet" src="./img/1x/let.png" alt="">
+                <img id="headergo" src="./img/1x/go.png" alt="">
+            </div>
         </div>
-        <div id="info" class="section">
-            <h1>登山資訊</h1>
+        <div id="info" class="section" data-tooltip="About">
+            <h3>關於富士山</h3>
             <div class="infopage">
                 <p>
                     日語：ふじさん<br>
@@ -85,6 +112,7 @@
         </div>
         <div id="medias" class="section">
             <h3>Live Camera</h3>
+            
             <iframe id="fujiLivecamera" src="https://www.youtube.com/embed/tLQOIro0kgc" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
         </div>
@@ -98,26 +126,33 @@
         </div>
         <div id="travelaround" class="section">
             <h3>富士山周邊景點</h3>
-            <div class="travelbox">
-                <figure><img src="./img/IMG_0978.JPG" alt=""></figure>
-                <figcaption>忍也八海</figcaption>
-            </div>
-
+            <div class="card" style="width: 18rem;">
+                <img src="./img/IMG_0978.JPG" class="card-img-top" alt="">
+                <div class="card-body">
+                  <h5 class="card-title">忍也八海</h5>
+                  <p class="card-text">富士山的雪融化後，經過大自然的過濾，湧出清澈的池水，形成了忍野八海天然的湧池景象</p>
+                  <a href="https://hondayellow.pixnet.net/blog/post/343812427" class="btn btn-primary">遊記閱讀</a>
+                </div>
+              </div>
         </div>
-        <div id="" class="section">
+        <div id="" class="section"></div>
+        <div id="" class="section"></div>
 
-        </div>
     </div>
     <!-- <footer class="section"> -->
 
     <!-- </footer> -->
     <script>
-        // alert('test')
         new fullpage('#fullpage', {
         //options here
         autoScrolling:true,
-        scrollHorizontally: true
+        scrollHorizontally: true,
+        //navigation
+        navigation: true,
+        navigationPosition: 'left'
         });
     </script>
+
+    <script src="./js/jquery-3.6.0.js"></script>
 </body>
 </html>

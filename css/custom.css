@@ -5,9 +5,13 @@
 }
 :root {
     --blue: #2b72b5;
+    --lightblue:#a6d9f3;
 
 }
 h1,h2,h3,h4,h5,h6 {
+    color: var( --blue );
+}
+h3 {
     color: var( --blue );
     text-align: center;
     font-size: 3rem;
@@ -17,6 +21,8 @@ h1,h2,h3,h4,h5,h6 {
     right: 0px;
     margin: 0 auto;
 }
+
+
 .section{
     width: 100%;
     height: 100vh;
@@ -50,7 +56,7 @@ h1,h2,h3,h4,h5,h6 {
     
 }
 #trails{
-    background-image: url('../img/m8bimq0000003td4.jpeg');
+    /* background-image: url('../img/m8bimq0000003td4.jpeg'); */
     background-repeat: no-repeat;
     background-position: bottom right;
     /* display: flex; */
@@ -104,6 +110,7 @@ figure img{
     width: 100vw;
     height: 100vh;
     display: flex;
+    /* z-index: 2; */
 }
 
 
@@ -211,7 +218,7 @@ figure img{
     }
     #shinkansen{
         right: -100vw;
-        animation: Rail 10s 2s ;
+        animation: Rail 10s 4s ;
         animation-fill-mode:forwards;
     }
     @keyframes Rail {
@@ -257,7 +264,7 @@ figure img{
     }
     #shinkansen{
         right: -165%;
-        animation: Rail_m 10s 2s ;
+        animation: Rail_m 10s 4s ;
         animation-fill-mode:forwards;
     }
     @keyframes Rail_m {
@@ -268,7 +275,6 @@ figure img{
 
 
 @media (max-width: 575.99px) { 
-
     #headerlet , #headergo{
         width: 50vw;
         transform: rotate(12.5deg);
@@ -277,10 +283,10 @@ figure img{
     }
     #headerlet{
         left: 15vw;
-        top: 8vh;
+        top: 13vh;
     }
     #headergo{
-        top: 15vh;
+        top: 20vh;
         left: 35vw;
     }
     @keyframes letgo_s {
@@ -294,17 +300,17 @@ figure img{
     }
     #sun{    
         width: 80vw;
-        bottom: -15vh;
+        bottom: -20vh;
         animation: SunRise_s 5s 2s;
         animation-fill-mode:forwards;
     }
     @keyframes SunRise_s {
-        from { bottom: -15vh; }
+        from { bottom: -20vh; }
         to { bottom: 8vh; }
     }
     #shinkansen{
         right: -200%;
-        animation: Rail_s 10s 2s ;
+        animation: Rail_s 10s 4s ;
         animation-fill-mode:forwards;
     }
     @keyframes Rail_s {
@@ -315,5 +321,60 @@ figure img{
         width: 312px;
         height: 175.5px;
     }
- }
+}
+ 
+#navbar{
+     position: fixed;
+     height: 100vh;
+     margin: 0 auto auto 20px;
+     z-index: 1;
+     background-color: var(--blue);
+     width: 4px;
+     height: 100vh;
+     /* display: none; */
+    }
+    
+.mynavcss{
+    margin-bottom: 30px;
+    height: 30px;
+}
 
+.mynavcss > button{
+    /* display: block; */
+    display: none;
+    width: 130px;
+    height: 30px;
+    position: relative;
+    top: 50px;
+    left: -10px;
+    background-color: rgba(0, 0, 255, 0.2);
+    border-radius: 20px;
+    text-align: center;
+    line-height: 10px;
+    border: none;
+    color: var(--blue);
+    /* z-index: 1; */
+}
+
+
+.navcircle{
+    width: 12px;
+    height: 12px;
+    position: relative;
+    top: 70px;
+    border: 1px solid #ffffff; 
+    border-radius: 50%;
+    background-color: var(--blue);
+    margin-left:-4px;
+    /* margin-bottom: 40px; */
+    /* z-index: 1; */
+}
+
+
+#fp-nav ul li a span, 
+.fp-slidesNav ul li a span {
+    background: var(--blue);
+}
+#fp-nav ul li .fp-tooltip {
+    color: var(--blue);
+}
