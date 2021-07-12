@@ -5,13 +5,32 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="./css/fullpage.css">
-    <link rel="stylesheet" href="./css/custom.css">
     <link rel="stylesheet" href="./css/bootstrap.css">
+    <link rel="stylesheet" href="./css/jquery-ui.css">
+    <link rel="stylesheet" href="./css/aos.scss">
+    <link rel="stylesheet" href="./css/custom.css">
+
+    <script src="./js/jquery-3.6.0.js"></script>
+    <script src="./js/jquery-ui.js"></script>
+    <script>
+        $( function() {
+          $( "#trailsLab" ).tabs();
+        } );
+        </script>
     <script src="./js/fullpage.js"></script>
-    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
-    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
     <script src="js/bootstrap.js"></script>
+    <script src="./js/aos.js"></script>
+    <script>
+        AOS.init();
+    </script>
+
     <script src="./js/custom.js" defer></script>
+    <!-- <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script> -->
+    <!-- <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script> -->
+    <!-- google字體 -->
+    <!-- <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=RocknRoll+One&display=swap" rel="stylesheet"> -->
     
     <title>富士登山</title>
 </head>
@@ -57,24 +76,37 @@
                 <img id="headergo" src="./img/1x/go.png" alt="">
             </div>
         </div>
-        <div id="info" class="section" data-tooltip="About">
-            <h3>關於富士山</h3>
+        <div class="section" id="photoslide" data-tooltip="Photo">
+            <div class="slide" id="slide1"><p id="slide1Text">日本人なら誰しも、一生に一度は登りたい。</p></div>
+            <div class="slide" id="slide2"><p id="slide2Text">富士山の頂上で見る荘厳な日の出。</p></div>
+        </div>
+        <div id="info" class="section" data-tooltip="登山情報">
+            <h3><span>富士山</span>基本情報</h3>
             <div class="infopage">
-                <p>
-                    日語：ふじさん<br>
-                    地理位置：橫跨靜岡縣和山梨縣
-                    海拔：主峰海拔3776公尺
-                    氣溫：隨著高度上升氣溫也會逐漸下降，夜晚到日出之前會降到5度以下
-                    特色：一座活火山，火山口直徑約800公尺，山頂於冬季積雪，直至次年6、7月才會融化
-                    最高峰：劍峰 3776公尺（也是日本最高峰）
-                    重要性：於2013年6月22日正式獲選列入「世界文化遺產」，也是「日本第17個世界遺產」，在日本也列入「日本百名山」之一，同時也是「日本三名山」之一
-                </p>
+                <div class="col-6">
+                    <h6>地理＆環境</h6>
+                    <p>海拔：主峰海拔3776公尺</p>
+                    <p>位置：橫跨 靜岡縣、山梨縣</p>
+                    <p>最高峰：劍峰 3776公尺（日本最高峰）</p>
+                    <p>特色：活火山，火山口直徑約800公尺 <br>
+                          山頂於10月左右開始積雪，直至次年6、7月才會完全融化</p>
+                    <p>山頂溫度：8月平均最低溫3.4度，最高9.1度</p>
+                    
+                </div>
+                <div class="col-6">
+                    <h6>登山須知</h6>
+                    <p>開放時間：每年7月初-9月初</p>
+                    <p>登山路線：吉田、須走、御殿場、富士宮</p>
+                    <p>上山所需時間：6~8.5小時</p>
+                    <p>下山所需時間：4~5小時</p>
+                    <p>嚴禁彈丸登山</p>
+                </div>
             </div>
         </div>
-        <div id="trails" class="section">
+        <div id="trails" class="section" data-tooltip="登山路線">
             <h3>登山路線</h3>
             <div id="trailsbt">
-                <div id="yoshida" class="trailsbt">
+                <!-- <div id="yoshida" class="trailsbt">
                     <input type="radio" id="yoshidatrails">
                     <label for="yoshidatrails" id="yoshidabt"><img src="./img/trail_y.png" alt="">吉田路線</label>
                 </div>
@@ -85,58 +117,354 @@
                 </div>
                 <div id="gotemba" class="trailsbt">
                     <input type="radio" id="gotembatrails">
-                    <label for="gotembatrails"><img src="./img/trail_g.png" alt="">吉田路線</label>
+                    <label for="gotembatrails"><img src="./img/trail_g.png" alt="">御殿場路線</label>
                     
                 </div>
                 <div id="fujinomiya" class="trailsbt">
                     <input type="radio" id="fujinomiyatrails">
-                    <label for="fujinomiyatrails"><img src="./img/trail_b.png" alt="">吉田路線</label>
+                    <label for="fujinomiyatrails"><img src="./img/trail_b.png" alt="">富士宮路線</label>
+                </div> -->
+                <!-- <div>
+                    <button>吉田路線</button>
+                    <P id="" class="trail_box">吉田路線是</p>
+                </div>
+                <div>
+                    <button>須走路線</button>
+                    <p id="" class="trail_box">須走路線是</p>
+                </div> -->
+                <div id="trailsLab">
+                    <ul>
+                      <li><a id="yoshida" href="#yoshidatrails">吉田路線</a></li>
+                      <li><a id="subashiri" href="#subashiritrails">須走路線</a></li>
+                      <li><a id="gotemba" href="#gotembatrails">御殿場路線</a></li>
+                      <li><a id="fujinomiya" href="#fujinomiyatrails">富士宮路線</a></li>
+                    </ul>
+                    <div id="yoshidatrails" class="trailsInfo">
+                        <div>
+                            <p><img src="./img/1x/trail_yoshida.png" alt="" style="width: 35vw;"></p>
+                            <p>吉田路線是從山梨縣海拔約2300m的斯巴魯五合目出發</p>
+                            <p>因為交通便利、沿途山屋數量最多，是最受登山客歡迎的路線，每年有超過一半的登山者。</p>
+                            <p>上山與下山是各別的登山道，雖然路線分開，但在熱門時間登山道還是會有擁擠人潮。</p>
+                            <p>上山道經過的山屋較多，下山道則比較少。</p>
+                            <p>登山路線位於東北側，不用到山頂也可以看到御萊光(日出)</p>
+                        </div>
+                    </div>
+                    <div id="subashiritrails" class="trailsInfo">
+                        <p><img src="./img/1x/trail_subashiri.png" alt="" style="width: 35vw;"></p>
+                        <p>從靜岡一側的富士山東側到山頂的路線是海拔2000m的須走出口第5站。重點是當你穿過林帶時，你可以從任何地方看到日出和富士的影子。從本八戶到山頂的區間與“吉田路線”匯合。山路和下坡路分開，可以享受沿火山碎石直線下行的“跑沙”。晚上在森林地帶很容易迷路，所以要小心。</p>
+                    </div>
+                    <div id="gotembatrails" class="trailsInfo">
+                        <p><img src="./img/1x/trail_gotemba.png" alt="" style="width: 35vw;"></p>
+                        <p>從靜岡一側的富士山東南側到山頂的路線是海拔1440m的御殿場出口新5站。到頂峰高差大，距離最長，適合健美腿。與其他路線相比，小屋較少，因此您可以享受安靜的登山，但由於目標很少，因此您需要注意不要在夜間或大霧中迷路。 “Osago Riding”的動態景觀非常吸引人。</p>
+                    </div>
+                    <div id="fujinomiyatrails" class="trailsInfo">
+                        <p><img src="./img/1x/trail_fujinomiya.png" alt="" style="width: 35vw;"></p>
+                        <p>從靜岡一側的富士山南側到山頂的路線，作為富士山的正門使用。從海拔最高2400m的富士宮口第5站出發，
+                            海拔差和步行距離是所有路線中最低和最短的。幾乎等間隔的山間小屋，很容易休息，但整體坡度較陡，岩石較多。</p>
+                        <p>上山與下山的路線一樣，所以很難迷路，但人多時相對比較擁擠。</p>
+                        <p>熱門度僅次於吉田路線</p>
+                    </div>
+                </div>    
+                <div id="trailsRecommend">
+                    <p>適合對象：<span>新手</span></p>
+                    <p>登山路線/時間：<span>約6小時25分</span></p>
+                    <p>下山路線/時間：<span>約3小時40分</span></p>
+                    <p>登山起點海拔高度：<span>2300m</span></p>
                 </div>
             </div>
+        </div>
+        <div id="tool" class="section" data-tooltip="登山行程">
+            <h3>登富士山兩天一夜行程</h3>
+            <div id="itinerary" class="col-10">
+                <div >
+                    <img id="itineraryImg" src="./img/bg1.jpg" alt="">
+                </div>
+                <div class="itineraryList">
+                    <div id="changeItinerary">
+                        <button id="changeToitinerary1">登頂見御来光行程</button>
+                        <button id="changeToitinerary2">睡飽喝足行程</button>
+                    </div>
+                    <div id="itinerary1">
+                        <p>這是<a href="https://hondayellow.pixnet.net/blog/post/348633181">Sunshinetour</a>的登山團行程，由日本嚮導帶隊登山，無經驗的登山新手可以考慮參加登山團！</p>
+                        <table>
+                            <tr>
+                                <td  class="tdSpanStyle"colspan="3">Day1</td>
+                            </tr>
+                            <tr id="itinerary1X1" >
+                                <td>11:00</td>
+                                <td></td>
+                                <td>抵達富士山五合目</td>
+                            </tr>
+                            <tr id="itinerary1_2">
+                                <td>13:30</td>
+                                <td>2,275m</td>
+                                <td>吉田口出發</td>
+                            </tr>
+                            <tr>
+                                <td>15:00</td>
+                                <td>2,800m</td>
+                                <td>七合目-富士一館</td>
+                            </tr>
+                            <tr>
+                                <td>20:00</td>
+                                <td>3,250m</td>
+                                <td>八合目-元祖室</td>
+                            </tr>
+                            <tr>
+                                <td class="tdSpanStyle" colspan="3">Day2</td>
+                            </tr>
+                            <tr>
+                                <td>12:30</td>
+                                <td>3,250m</td>
+                                <td>起床出發</td>
+                            </tr>
+                            <tr>
+                                <td>03:30</td>
+                                <td>3,776m</td>
+                                <td>抵達山頂、山屋休息</td>
+                            </tr>
+                            <tr>
+                                <td>05:00</td>
+                                <td>3,776m</td>
+                                <td>見御来光</td>
+                            </tr>
+                            <tr>
+                                <td>05:10</td>
+                                <td>3,776m</td>
+                                <td>登上日本最高峰-劍峰</td>
+                            </tr>
+                            <tr>
+                                <td>06:00</td>
+                                <td></td>
+                                <td>下山</td>
+                            </tr>
+                            <tr>
+                                <td>11:00</td>
+                                <td>2,275m</td>
+                                <td>回到五合目</td>
+                            </tr>
+                        </table>
+                        
+                        <!-- <li>11:00 抵達富士山五合目</li>
+                            <li>13:30 吉田口出發</li>
+                            <li>七合目</li>
+                            <li>20:00 抵達八合目山屋</li>
+                            <li>12:30 起床出發</li>
+                            <li>03:30 抵達山頂、山屋休息</li>
+                            <li>05:00 見御来光</li>
+                            <li>05:10 攻頂</li>
+                            <li>11:00 回到五合目</li> -->
+                        </div>
+                        <div id="itinerary2">
+                            <p>這個行程是跟著自己心情走走停停，在山屋睡飽再出發，在山頂待好待滿！</p>
+                            <!-- <h4>睡飽喝足行程</h4>
+                            <li>10:00 抵達富士山五合目</li>
+                            <li>11:30 2,275m 吉田口出發</li>
+                            <li>13:30 2,800m 七合目-富士一館</li>
+                            <li>18:30 3,250m 八合目-元祖室</li>
+                            <li>04:00 起床出發</li>
+                            <li>05:00 3,300m 見御来光（八合目）</li>
+                            <li>09:00 抵達山頂</li>
+                            <li>10:40 3,776m 登上劍峰</li>
+                            <li>12:30 下山</li>
+                            <li>18:30 回到五合目</li> -->
+                            <table>
+                                <tr>
+                                    <td  class="tdSpanStyle"colspan="3">Day1</td>
+                                </tr>
+                                <tr>
+                                    <td>10:00</td>
+                                    <td></td>
+                                    <td>抵達富士山五合目</td>
+                                </tr>
+                                <tr>
+                                    <td>11:30</td>
+                                    <td>2,275m</td>
+                                    <td>吉田口出發</td>
+                                </tr>
+                                <tr>
+                                    <td>13:30</td>
+                                    <td>2,800m</td>
+                                    <td>七合目-富士一館</td>
+                                </tr>
+                                <tr>
+                                    <td>18:30</td>
+                                    <td>3,250m</td>
+                                    <td>八合目-元祖室</td>
+                                </tr>
+                                <tr>
+                                    <td class="tdSpanStyle" colspan="3">Day2</td>
+                                </tr>
+                                <tr>
+                                    <td>04:00</td>
+                                    <td>3,250m</td>
+                                    <td>起床出發</td>
+                                </tr>
+                                <tr>
+                                    <td>05:00</td>
+                                    <td>3,300m</td>
+                                    <td>見御来光（八合目）</td>
+                                </tr>
+                                <tr>
+                                    <td>09:00</td>
+                                    <td>3,776m</td>
+                                    <td>抵達山頂</td>
+                                </tr>
+                                <tr>
+                                    <td>10:40</td>
+                                    <td>3,776m</td>
+                                    <td>登上日本最高峰-劍峰</td>
+                                </tr>
+                                <tr>
+                                    <td>12:30</td>
+                                    <td></td>
+                                    <td>下山</td>
+                                </tr>
+                                <tr>
+                                    <td>18:20</td>
+                                    <td>2,275m</td>
+                                    <td>回到五合目</td>
+                                </tr>
+                            </table>
+                        </div>
+                    </div>
 
-            <div id="" class="trail_box">吉田路線是</div>
-            <div id="" class="trail_box">須走路線是</div>
+            </div>
 
         </div>
-        <div id="tool" class="section">
+        <div id="tool" class="section" data-tooltip="登山準備">
             <h3>登山前準備項目</h3>
+            <div class="col-8">
+
+            </div>
 
         </div>
-        <div id="todo" class="section">
-            <h3>登富士山必做的事</h3>
+        <div id="todo" class="section" data-tooltip="To do or Not">
+            <h3>登富士山必做與不能做的事</h3>
+            <div class="card col-4">
+                <img src="./img/to_do.jpg" class="card-img-top" alt="登富士山必做的五件事">
+                <div class="card-body">
+                  <h5 class="card-title">必做的五件事</h5>
+                  <p class="card-text">如果一輩子只會登一次富士山<br>有些事，不做真的會後悔！</p>
+                  <a href="https://hondayellow.pixnet.net/blog/post/347980285" class="btn btn-primary">Read more</a>
+                </div>
+            </div>
+            <div class="card col-4">
+                <img src="./img/not_to_do.jpg" class="card-img-top" alt="...">
+                <div class="card-body">
+                  <h5 class="card-title">不能做的四件事</h5>
+                  <p class="card-text">登富士山千萬別做這四件事<br>別成為失禮的登山者！</p>
+                  <a href="https://hondayellow.pixnet.net/blog/post/347960884" class="btn btn-primary">Read more</a>
+                </div>
+              </div>
 
         </div>
-        <div id="dontdo" class="section">
-            <h3>登富士山不能做的事</h3>
-
-        </div>
-        <div id="medias" class="section">
+        <div id="medias" class="section" data-tooltip="即時影像">
             <h3>Live Camera</h3>
+            <div class="col-4">
+                <h4>氣象觀察</h4>
+
+            </div>
+            <div>
+                <iframe id="fujiLivecamera" class="col-4" src="https://www.youtube.com/embed/tLQOIro0kgc" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+            </div>
             
-            <iframe id="fujiLivecamera" src="https://www.youtube.com/embed/tLQOIro0kgc" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
         </div>
-        <div id="traffic" class="section">
-            <h3>前往富士山交通方式</h3>
-
-        </div>
-        <div id="qa" class="section">
-            <h3>Q&A</h3>
-
-        </div>
-        <div id="travelaround" class="section">
+        <!-- <div id="travelaround" class="section" data-tooltip="周邊景點">
             <h3>富士山周邊景點</h3>
             <div class="card" style="width: 18rem;">
                 <img src="./img/IMG_0978.JPG" class="card-img-top" alt="">
                 <div class="card-body">
-                  <h5 class="card-title">忍也八海</h5>
-                  <p class="card-text">富士山的雪融化後，經過大自然的過濾，湧出清澈的池水，形成了忍野八海天然的湧池景象</p>
-                  <a href="https://hondayellow.pixnet.net/blog/post/343812427" class="btn btn-primary">遊記閱讀</a>
+                    <h5 class="card-title">忍也八海</h5>
+                    <p class="card-text">富士山的雪融化後，經過大自然的過濾，湧出清澈的池水，形成了忍野八海天然的湧池景象</p>
+                    <a href="https://hondayellow.pixnet.net/blog/post/343812427" class="btn btn-primary">遊記閱讀</a>
                 </div>
-              </div>
+            </div>
+        </div> -->
+        <div id="" class="section" data-tooltip=""></div>
+        <div id="traffic" class="section"data-tooltip="交通方式">
+            <h3>前往富士山交通方式</h3>
+            <div>
+                <div id="byTrain">
+                    <div id="fromTokyobyTrain">
+                        <p>新宿駅</p>
+                        <div class="trainInfo">
+                            <p>中央本線</p>
+                            <p class="trafficWay">約1小時</p>
+                        </div>
+                        <p>大月駅</p>
+                        <div class="trainInfo">
+                            <p>富士急行線</p>
+                            <p class="trafficWay">約50分鐘</p>
+                        </div>
+                        <p>富士山駅</p>
+                        <div class="trainInfo">
+                            <p>巴士</p>
+                            <p class="trafficWay">約50分鐘</p>
+                        </div>
+                        <p>富士山五合目</p>
+                    </div>
+                    <div id="fromOsakabyTrain1">
+                        <p>新大阪駅</p>
+                        <div class="trainInfo">
+                            <p>東海道新幹線</p>
+                            <p class="trafficWay">約2小時15分</p>
+                        </div>
+                        <p>三島駅</p>
+                        <div class="trainInfo">
+                            <p>巴士</p>
+                            <p class="trafficWay">約2小時10分</p>
+                        </div>
+                        <p>富士山駅</p>
+                        <div class="trainInfo">
+                            <p>巴士</p>
+                            <p class="trafficWay">約50分鐘</p>
+                        </div>
+                        <p>富士山五合目</p>
+                    </div>
+                    <div id="fromOsakabyTrain2">
+                        <p>新大阪駅</p>
+                        <div class="trainInfo">
+                            <p>東海道新幹線</p>
+                            <p class="trafficWay">約2小時25分</p>
+                        </div>
+                        <p>新富士駅</p>
+                        <div class="trainInfo">
+                            <p>巴士</p>
+                            <p class="trafficWay">約1小時55分</p>
+                        </div>
+                        <p>富士山駅</p>
+                        <div class="trainInfo">
+                            <p>巴士</p>
+                            <p class="trafficWay">約50分鐘</p>
+                        </div>
+                        <p>富士山五合目</p>
+                    </div>
+                </div>
+            </div>
+            
         </div>
-        <div id="" class="section"></div>
-        <div id="" class="section"></div>
+        <div id="qa" class="section" data-tooltip="登山小測驗">
+            <h3>やまびこ登山小測驗</h3>
+            <p id="QAinfo">這些登富士山的小知識，你都記得了嗎？<br>
+                選一下富士山，讓富士山來出題考考你吧！</p>
+            <div id="question" >
+                <p id="questionShow" class="#questionTitle"></p>
+                <!-- <p id="questionTwe" class="#questionTitle">Q2：請問登富士山可以一天來回嗎？</p> -->
+                <p id="result"></p>
+            </div>
+            <div id="answer">
+                <p>答案是：</p>
+                <button id="answerO" onclick="yesyes()" class="answerInput">O</button><br>
+                <button id="answerX" onclick="nono()" class="answerInput">X</button>
+            </div>
+            <img id="yamabikoMountain" src="./img/1x/資產 21.png" alt="">
+            <img id="yamabikoHiker"  src="./img/1x/資產 20.png" alt="">
+            
+            
+        </div>
+        <div id="" class="section" data-tooltip=""></div>
 
     </div>
     <!-- <footer class="section"> -->
@@ -150,9 +478,9 @@
         //navigation
         navigation: true,
         navigationPosition: 'left'
+        // verticalCentered: true,
         });
     </script>
 
-    <script src="./js/jquery-3.6.0.js"></script>
 </body>
 </html>

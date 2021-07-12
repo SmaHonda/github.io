@@ -4,6 +4,7 @@
     box-sizing: border-box;
 }
 :root {
+    /* font-family: 'RocknRoll One', sans-serif; */
     --blue: #2b72b5;
     --lightblue:#a6d9f3;
 
@@ -14,21 +15,44 @@ h1,h2,h3,h4,h5,h6 {
 h3 {
     color: var( --blue );
     text-align: center;
-    font-size: 3rem;
+    font-size: 36px;
     position: absolute;
-    top: 10%;
+    top: 4%;
     left: 0px;
     right: 0px;
     margin: 0 auto;
+    letter-spacing: 5px;
 }
 
+table{
+    width: 100%;
+}
+
+tr>td:nth-child(1){
+    text-align: center;
+}
+
+td{
+    padding: 5px 20px;
+}
+
+.tdSpanStyle{
+    background-color: var(--lightblue);
+    color: var(--blue);
+    letter-spacing: 8px;
+    border-radius: 5px;
+}
+
+tr:hover{
+    background-color: var(--blue);
+    color: white;
+}
 
 .section{
     width: 100%;
     height: 100vh;
 }
 #home{
-    /* background-color: red; */
     display: flex;
     position: relative;
 }
@@ -49,12 +73,14 @@ h3 {
     background-position: right bottom;
 }
 .infopage{
-    display: block;
+    display: flex;
     width: 70%;
-    position: relative;
+    position: absolute;
     left: 10%;
-    
+    top: 150px;
 }
+
+
 #trails{
     /* background-image: url('../img/m8bimq0000003td4.jpeg'); */
     background-repeat: no-repeat;
@@ -63,8 +89,10 @@ h3 {
     /* flex-direction:column; */
 }
 
-#yoshidatrails {
-    background-color: yellow;
+#yoshida {
+    background-color: #E79936;
+    outline: none;
+    
 }
 
 #trailsbt{
@@ -72,17 +100,63 @@ h3 {
     justify-content: center;
     position: absolute;
     top: 20%;
-    left: 20%;
+    left: 10%;
+}
+
+#trailsRecommend{
+    position: absolute;
+    width: 39vw;
+    height: 48vh;
+    top:15%;
+    left:50%;
+    background-color: rgba(255, 255, 255, 0.7);
+    border-radius: 20px;
+    font-size: 1.5rem;
+    color: var(--blue);
+}
+
+.trailsInfo{
+    width: 40vw;
+}
+#trailsLab{
+    width: 80vw;
+    height: 60vh;
+    background-color: var(--lightblue);
+    font-size: 1.5rem;
+}
+#trailsLab p{
+    color: var(--blue);
+
+}
+
+.ui-widget-header{
+    background-color: var(--lightblue);
+    border: none;
+}
+.ui-tabs .ui-tabs-nav {
+    padding: .5em .2em 0;
+    display: flex;
+    justify-content: space-between;
+    /* outline: none; */
+}
+
+html.ui-button.ui-state-disabled:active{
+    border: none;
+    
+}
+.ui-button.ui-state-active:hover{
+    border: none;
 }
 
 .trail_box{
-    display: block;
+    /* display: block; */
+    display: none;
     height: 50vh;
     width: 50vw;
     position: absolute;
-    top: 30%;
+    top: 30px;
     left: 10%;
-    /* background-color: red; */
+    background-color: red;
 }
 input[type=radio]{
     display: none;
@@ -218,7 +292,7 @@ figure img{
     }
     #shinkansen{
         right: -100vw;
-        animation: Rail 10s 4s ;
+        animation: Rail 7s 2s ;
         animation-fill-mode:forwards;
     }
     @keyframes Rail {
@@ -264,7 +338,7 @@ figure img{
     }
     #shinkansen{
         right: -165%;
-        animation: Rail_m 10s 4s ;
+        animation: Rail_m 7s 2s ;
         animation-fill-mode:forwards;
     }
     @keyframes Rail_m {
@@ -310,7 +384,7 @@ figure img{
     }
     #shinkansen{
         right: -200%;
-        animation: Rail_s 10s 4s ;
+        animation: Rail_s 7s 2s ;
         animation-fill-mode:forwards;
     }
     @keyframes Rail_s {
@@ -377,4 +451,302 @@ figure img{
 }
 #fp-nav ul li .fp-tooltip {
     color: var(--blue);
+}
+
+
+/* fullpagebackground Setting */
+    #slide1{
+        background: url(../img/bg1.jpg);
+        background-position: center;
+        background-size: cover;
+        
+	}
+	#slide2{
+        background: url(../img/bg2.jpg);
+        background-position: center;
+        background-size: cover;
+	} 
+    #photoslide p {
+        position: relative;
+        color: rgba(255, 255, 255,0.8);
+        font-size: 36px;
+        width: 60%;
+        left: 10%;
+        bottom: -20%;
+        text-align: center;
+        overflow: hidden;
+        padding: auto 10% ;
+    }
+    
+    #photoslide p::after {
+        content: '';
+        display: inline-block;
+        position: absolute;
+        width: 3px;
+        height: 40px;
+        bottom:20px;
+        background-color: rgba(255, 255, 255,0.8);
+        animation: 1s mycursor steps(2 , jump-none) infinite;
+    }
+@keyframes mycursor{
+    from{
+        opacity: 0;
+    } to{
+        opacity: 1;
+    }
+}
+
+#slide1Text span{
+    display: inline-block;
+    overflow: hidden;
+    width: 0ch;
+    animation: textin 0.01s ease-in-out forwards;
+    animation-delay: var(--delay1);
+    animation-play-state: paused;
+}
+
+#slide2Text span{
+    display: inline-block;
+    overflow: hidden;
+    width: 0ch;
+    animation: textin 0.01s ease-in-out forwards;
+    animation-delay: var(--delay2);
+    animation-play-state: paused;
+}
+
+@keyframes textin{
+    from{
+        width: 0ch;
+    } to {
+        width: 2ch;
+    }
+}
+
+#todo{
+    text-align: center;
+}
+
+#todo img{
+    margin-top: 3%;
+}
+
+.card{
+        display: inline-flex;
+        justify-content: center; 
+        align-items: center;
+        margin: 10px;
+
+}
+
+
+#yamabikoMountain{
+    position: absolute;
+    bottom: 0px;
+    left: 0px;
+    height: 600px;
+    z-index: 1;
+}
+#yamabikoHiker{
+    position: absolute;
+    bottom: 0px;
+    right: 0px;
+    height: 400px;
+    z-index: 2;
+}
+
+#QAinfo {
+    color: var( --blue );
+    text-align: center;
+    font-size: 24px;
+    position: absolute;
+    top: 12%;
+    left: 0px;
+    right: 0px;
+    margin: 0 auto;
+    letter-spacing: 5px;
+}
+
+#question{
+    display: none;
+    position: absolute;
+    height: 60px;
+    /* height: 120px; */
+    width: 600px;
+    color: white;
+    text-align: left;
+    font-size: 24px;
+    top: 35%;
+    left: 30%;
+    /* right: 0px; */
+    /* margin: 0 auto; */
+    letter-spacing: 5px;
+    background-color: var(--blue);
+    border-radius: 10px;
+    padding: 10px 20px;
+    z-index: 3;
+}
+
+.questionTitle {
+    font-size: 24px;
+    letter-spacing: 5px;
+}
+#questionOne, #questionTwe{
+    display: none;
+}
+#answer {
+    display: none;
+    color: white;
+    /* text-align: center; */
+    font-size: 24px;
+    position: absolute;
+    bottom: 30%;
+    right: 20%;
+    letter-spacing: 5px;
+    background-color: var(--blue);
+    border-radius: 10px;
+    padding: 10px 20px;
+    z-index: 3;
+}
+
+#answer button{
+    background-color: var(--lightblue);
+    color: var(--blue);
+    width: 200px;
+    outline: none;
+    border-radius: 5px;
+    margin-top: 5px;
+    margin-left: 30px;
+    border: 2px solid var(--blue);
+}
+#answer button:hover{
+    background-color: var(--blue);
+    color: white;
+    border: 2px solid var(--lightblue);
+}
+
+
+#result{
+    /* display: none; */
+    padding-left: 68px;
+}
+
+.nextQuextion{
+    /* display: none; */
+    outline: none;
+    color: var(--blue);
+    background-color: var(--lightblue);
+    border: none;
+    border-radius: 5px;
+    padding: 0px 20px;
+}
+
+
+
+#itinerary{
+    display: flex;
+    /* border: black 2px solid; */
+    margin: 0 auto;
+    height: 500px;
+}
+
+.itineraryList{
+    position: absolute;
+    left: 50%; 
+    width: 525px;
+    /* background-color: red; */
+}
+
+#itinerary img{
+    width: 45%;
+}
+
+#changeItinerary{
+    width: 525px;
+    background-color: var(--blue);
+    border-radius: 5px;
+}
+
+#changeToitinerary1,#changeToitinerary2{
+    outline: none;
+    border: none;
+    background-color: var(--lightblue);
+    color: var(--blue);
+    width: 250px;
+    height: 50px;
+    font-size: 24px;
+    margin: 5px;
+    border-radius: 5px;
+}
+
+#itinerary2{
+    display: none;
+}
+
+#itinerary img{
+    position: absolute;
+    bottom: 20px;
+}
+
+#changeToitinerary2{
+    background-color: var(--blue);
+    color: white;
+}
+
+#byTrain{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+#fromTokyobyTrain , #fromOsakabyTrain1 , #fromOsakabyTrain2{
+    width: 70%;
+    display: flex;
+    /* justify-content: center; */
+    justify-content: space-between;
+    align-items: center;
+    
+}
+
+
+#byTrain p{
+    border: var(--lightblue) 2px solid;
+    padding: 5px;
+    border-radius: 5px;
+    margin: 10px 10px;
+}
+
+#byTrain .trainInfo p{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: relative;
+    border: none;
+    margin: 0;
+    padding: 0;
+}
+.trafficWay::after{
+    content: "";
+    width: 120%;
+    height: 5px;
+    background-color: var(--blue);
+    position: absolute;
+    top:-2px;
+}
+
+
+.fp-controlArrow {
+    top: 99%;
+    /* border-color: rgba(255, 255, 255,0.8); */
+}
+
+.fp-controlArrow.fp-prev {
+    left: 93%;
+    border-width: 17.5px 25px 17.5px 0px;
+    border-color: transparent rgba(255, 255, 255,0.8) transparent transparent;
+}
+.fp-controlArrow.fp-next {
+    right: 1%;
+    border-width: 17.5px 0px 17.5px 25px;
+    border-color: transparent transparent transparent rgba(255, 255, 255,0.8) ;
 }
