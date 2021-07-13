@@ -902,7 +902,7 @@ figure img{
             display: flex;
             flex-direction: column;
             align-items: center;
-            margin-top: -30px;
+            margin-top: -25px;
         }
         #TodoCard , #NotdoCard{
             max-width: 70%;
