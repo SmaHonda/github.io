@@ -910,22 +910,24 @@ figure img{
             padding: 0;
         }
         #TodoOrNotCards .card-img-top{
-            width: 150px;
+            width: 190px;
         }
         #TodoOrNotCards .card-title {
             font-size: 20px;
-            margin: 2px;
+            margin: 3px;
         }
         #TodoOrNotCards .btn {
             font-size: 12px;
-            padding: 0;
-            /* padding: 3px 5px; */
-            /* margin-bottom: 5px; */
+            /* padding: 0; */
+            padding: 3px 5px;
+            margin-bottom: 5px;
+            background-color: var(--blue);
+            color: white;
             
         }
         #TodoOrNotCards .card-text{
-            font-size: 12px;
-            margin: 2px;
+            font-size: 13px;
+            margin: 3px;
 
         }
         #TodoOrNotCards .card-body{
