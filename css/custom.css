@@ -451,9 +451,6 @@ figure img{
         font-size: 24px;
         letter-spacing: 5px;
     }
-    #questionOne, #questionTwe{
-        display: none;
-    }
     #answer {
         display: none;
         color: white;
@@ -802,6 +799,13 @@ figure img{
             font-size: 18px;
             left: 20%;
             width: 70%;
+            padding: 15px 20px;
+        }
+        .questionTitle {
+            font-size: 18px;
+        }
+        #result{
+            padding-left: 58px;
         }
         #answer {
             font-size: 18px;
@@ -815,9 +819,6 @@ figure img{
             top:-10px;
             width: 70%;
             margin-top: 5px;
-        }
-        #result{
-            padding-left: 58px;
         }
     }
     
@@ -945,7 +946,16 @@ figure img{
         #question{
             font-size: 16px;
             left: 20%;
-            width: 70%;
+            width: 65%;
+            padding: 7px 10px;
+        }
+        .questionTitle {
+            font-size: 16px;
+        }
+        #result{
+            position: relative;
+            padding-left: 30px;
+            top: -10px;
         }
         #answer {
             font-size: 16px;
@@ -959,10 +969,5 @@ figure img{
             top:-10px;
             width: 70%;
             margin-top: 5px;
-        }
-        #result{
-            position: relative;
-            top:-10px;
-            padding-left: 30px;
         }
     }

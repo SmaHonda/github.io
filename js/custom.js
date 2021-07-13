@@ -243,6 +243,7 @@ function judgment(){
             i++ ;
             $('#next').click(function(){
                 $('#question').css("height", "60px");
+                $('#result').hide();
                 $('#questionShow').text(questionssss[i].Questions);
                 var temp = Boolean ; 
                 $('#next').hide();
