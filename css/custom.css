@@ -910,7 +910,7 @@ figure img{
             padding: 0;
         }
         #TodoOrNotCards .card-img-top{
-            width: 77%;
+            width: 150px;
         }
         #TodoOrNotCards .card-title {
             font-size: 20px;
