@@ -902,7 +902,7 @@ figure img{
             display: flex;
             flex-direction: column;
             align-items: center;
-            margin-top: 50px;
+            margin-top: -30px;
         }
         #TodoCard , #NotdoCard{
             max-width: 70%;
@@ -910,18 +910,27 @@ figure img{
             padding: 0;
         }
         #TodoOrNotCards .card-img-top{
-            width: 75%;
+            width: 77%;
         }
         #TodoOrNotCards .card-title {
             font-size: 20px;
+            margin: 2px;
         }
-        #TodoOrNotCards .btn , #TodoOrNotCards .card-text {
-            font-size: 16px;
+        #TodoOrNotCards .btn {
+            font-size: 12px;
+            padding: 3px 5px;
+            margin-bottom: 5px;
+            
+        }
+        #TodoOrNotCards .card-text{
+            font-size: 12px;
+            margin: 2px;
+
         }
         #TodoOrNotCards .card-body{
             width: 100%;
-            padding: 0px 0px;
-            margin: 10px 0px;
+            padding: 0px;
+            margin: 0px 0px;
         }
         /* ------------------------------- Q＆A */
         #yamabikoMountain{
