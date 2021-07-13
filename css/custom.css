@@ -918,8 +918,9 @@ figure img{
         }
         #TodoOrNotCards .btn {
             font-size: 12px;
-            padding: 3px 5px;
-            margin-bottom: 5px;
+            padding: 0;
+            /* padding: 3px 5px; */
+            /* margin-bottom: 5px; */
             
         }
         #TodoOrNotCards .card-text{
