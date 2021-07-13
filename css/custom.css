@@ -74,6 +74,7 @@ tr:hover{
 }
 .infopage{
     display: flex;
+    flex-direction: row;
     width: 70%;
     position: absolute;
     left: 10%;
@@ -255,149 +256,8 @@ figure img{
     margin: 0 auto;
  }
 
-@media (min-width: 1200px) { 
-    #headerlet , #headergo{
-        width: 20vw;
-        top: 3vh;
-        animation: letgo_l 5s 2s;
-        animation-fill-mode:forwards; 
-    }
-    #headerlet{
-        left: 3vw;
-    }
-    #headergo{
-        left: 12vw;
-    }
-    @keyframes letgo_l {
-        0% {opacity: 0;}
-        40% {opacity: 0;}
-        100% {opacity: 1;}
-    }
-    
-    #fujimountain{
-        width: 100%;
-        right: 0;
-        left: 0;
-        margin: 0 auto;
-    }
-    #sun{
-        width: 50vw;
-        bottom: -40vh;
-        animation: SunRise_l 5s 2s;
-        animation-fill-mode:forwards;
-    }
-    @keyframes SunRise_l {
-        from { bottom: -30vh; }
-        to { bottom: 5vh; }
-    }
-    #shinkansen{
-        right: -100vw;
-        animation: Rail 7s 2s ;
-        animation-fill-mode:forwards;
-    }
-    @keyframes Rail {
-        from { right: -100vw; }
-        to { right: 100vw; }
-    }
-}
-
-@media (min-width: 576px) and (max-width: 1199.99px) { 
-    #headerlet , #headergo{
-        width: 28vw;
-        animation: letgo_m 5s 2s;
-        animation-fill-mode:forwards; 
-    }
-    #headerlet{
-        left: 5vw;
-        top: 3vh;
-    }
-    #headergo{
-        left: 15vw;
-        top: 7vh;
-    }
-    @keyframes letgo_m {
-        0% {opacity: 0;}
-        40% {opacity: 0;}
-        100% {opacity: 1;}
-    }
-    #fujimountain{
-        width: 100%;
-        right: 0;
-        left: 0;
-        margin: 0 auto;
-    }
-    #sun{
-        width: 50vw;
-        bottom: -30vh;
-        animation: SunRise_m 5s 2s;
-        animation-fill-mode:forwards;
-    }
-    @keyframes SunRise_m {
-        from { bottom: -30vh; }
-        to { bottom: 8vh; }
-    }
-    #shinkansen{
-        right: -165%;
-        animation: Rail_m 7s 2s ;
-        animation-fill-mode:forwards;
-    }
-    @keyframes Rail_m {
-        from { right: -165%; }
-        to { right: 100vw; }
-    }
-}
-
-
-@media (max-width: 575.99px) { 
-    #headerlet , #headergo{
-        width: 50vw;
-        transform: rotate(12.5deg);
-        animation: letgo_s 5s 2s;
-        animation-fill-mode:forwards; 
-    }
-    #headerlet{
-        left: 15vw;
-        top: 13vh;
-    }
-    #headergo{
-        top: 20vh;
-        left: 35vw;
-    }
-    @keyframes letgo_s {
-        0% {opacity: 0;}
-        40% {opacity: 0;}
-        100% {opacity: 1;}
-    }
-    #fujimountain{
-        width: 180%;
-        right: -40vw;
-    }
-    #sun{    
-        width: 80vw;
-        bottom: -20vh;
-        animation: SunRise_s 5s 2s;
-        animation-fill-mode:forwards;
-    }
-    @keyframes SunRise_s {
-        from { bottom: -20vh; }
-        to { bottom: 8vh; }
-    }
-    #shinkansen{
-        right: -200%;
-        animation: Rail_s 7s 2s ;
-        animation-fill-mode:forwards;
-    }
-    @keyframes Rail_s {
-        from { right: -200%; }
-        to { right: 100vw; }
-    }
-    #fujiLivecamera{
-        width: 312px;
-        height: 175.5px;
-    }
-}
  
-#navbar{
+ #navbar{
      position: fixed;
      height: 100vh;
      margin: 0 auto auto 20px;
@@ -408,53 +268,57 @@ figure img{
      /* display: none; */
     }
     
-.mynavcss{
-    margin-bottom: 30px;
-    height: 30px;
-}
-
-.mynavcss > button{
-    /* display: block; */
-    display: none;
-    width: 130px;
-    height: 30px;
-    position: relative;
-    top: 50px;
-    left: -10px;
-    background-color: rgba(0, 0, 255, 0.2);
-    border-radius: 20px;
-    text-align: center;
-    line-height: 10px;
-    border: none;
-    color: var(--blue);
-    /* z-index: 1; */
-}
-
-
-.navcircle{
-    width: 12px;
-    height: 12px;
-    position: relative;
-    top: 70px;
-    border: 1px solid #ffffff; 
-    border-radius: 50%;
-    background-color: var(--blue);
-    margin-left:-4px;
-    /* margin-bottom: 40px; */
-    /* z-index: 1; */
-}
-
-
-#fp-nav ul li a span, 
-.fp-slidesNav ul li a span {
-    background: var(--blue);
-}
-#fp-nav ul li .fp-tooltip {
-    color: var(--blue);
-}
-
-
-/* fullpagebackground Setting */
+    .mynavcss{
+        margin-bottom: 30px;
+        height: 30px;
+    }
+    
+    .mynavcss > button{
+        /* display: block; */
+        display: none;
+        width: 130px;
+        height: 30px;
+        position: relative;
+        top: 50px;
+        left: -10px;
+        background-color: rgba(0, 0, 255, 0.2);
+        border-radius: 20px;
+        text-align: center;
+        line-height: 10px;
+        border: none;
+        color: var(--blue);
+        /* z-index: 1; */
+    }
+    
+    
+    .navcircle{
+        width: 12px;
+        height: 12px;
+        position: relative;
+        top: 70px;
+        border: 1px solid #ffffff; 
+        border-radius: 50%;
+        background-color: var(--blue);
+        margin-left:-4px;
+        /* margin-bottom: 40px; */
+        /* z-index: 1; */
+    }
+    
+    
+    #fp-nav ul li a span, 
+    .fp-slidesNav ul li a span {
+        background: var(--blue);
+        /* border: 1px solid rgba(255, 255, 255,0.8); */
+        /* height: 6px;
+        width: 6px;
+        margin: -3px 0 0 -3px; */
+    }
+    #fp-nav ul li .fp-tooltip {
+        color: var(--blue);
+    }
+    
+    
+    /* fullpagebackground Setting */
     #slide1{
         background: url(../img/bg1.jpg);
         background-position: center;
@@ -470,10 +334,11 @@ figure img{
         position: relative;
         color: rgba(255, 255, 255,0.8);
         font-size: 36px;
-        width: 60%;
+        width: 80%;
         left: 10%;
-        bottom: -20%;
-        text-align: center;
+        top: 15%;
+        /* top: 400px; */
+        text-align: left;
         overflow: hidden;
         padding: auto 10% ;
     }
@@ -488,265 +353,616 @@ figure img{
         background-color: rgba(255, 255, 255,0.8);
         animation: 1s mycursor steps(2 , jump-none) infinite;
     }
-@keyframes mycursor{
-    from{
-        opacity: 0;
-    } to{
-        opacity: 1;
+    @keyframes mycursor{
+        from{
+            opacity: 0;
+        } to{
+            opacity: 1;
+        }
     }
-}
-
-#slide1Text span{
-    display: inline-block;
-    overflow: hidden;
-    width: 0ch;
-    animation: textin 0.01s ease-in-out forwards;
-    animation-delay: var(--delay1);
-    animation-play-state: paused;
-}
-
-#slide2Text span{
-    display: inline-block;
-    overflow: hidden;
-    width: 0ch;
-    animation: textin 0.01s ease-in-out forwards;
-    animation-delay: var(--delay2);
-    animation-play-state: paused;
-}
-
-@keyframes textin{
-    from{
+    
+    #slide1Text span{
+        display: inline-block;
+        overflow: hidden;
         width: 0ch;
-    } to {
-        width: 2ch;
+        animation: textin 0.01s ease-in-out forwards;
+        animation-delay: var(--delay1);
+        animation-play-state: paused;
     }
-}
-
-#todo{
-    text-align: center;
-}
-
-#todo img{
-    margin-top: 3%;
-}
-
-.card{
+    
+    #slide2Text span{
+        display: inline-block;
+        overflow: hidden;
+        width: 0ch;
+        animation: textin 0.01s ease-in-out forwards;
+        animation-delay: var(--delay2);
+        animation-play-state: paused;
+    }
+    
+    @keyframes textin{
+        from{
+            width: 0ch;
+        } to {
+            width: 2ch;
+        }
+    }
+    
+    /* ------------------------------- To do or Not */
+    #todo{
+        text-align: center;
+    }
+    
+    #todo img{
+        margin-top: 3%;
+    }
+    
+    .card{
         display: inline-flex;
         justify-content: center; 
         align-items: center;
         margin: 10px;
-
-}
-
-
-#yamabikoMountain{
-    position: absolute;
-    bottom: 0px;
-    left: 0px;
-    height: 600px;
-    z-index: 1;
-}
-#yamabikoHiker{
-    position: absolute;
-    bottom: 0px;
-    right: 0px;
-    height: 400px;
-    z-index: 2;
-}
-
-#QAinfo {
-    color: var( --blue );
-    text-align: center;
-    font-size: 24px;
-    position: absolute;
-    top: 12%;
-    left: 0px;
-    right: 0px;
-    margin: 0 auto;
-    letter-spacing: 5px;
-}
-
-#question{
-    display: none;
-    position: absolute;
-    height: 60px;
-    /* height: 120px; */
-    width: 600px;
-    color: white;
-    text-align: left;
-    font-size: 24px;
-    top: 35%;
-    left: 30%;
-    /* right: 0px; */
-    /* margin: 0 auto; */
-    letter-spacing: 5px;
-    background-color: var(--blue);
-    border-radius: 10px;
-    padding: 10px 20px;
-    z-index: 3;
-}
-
-.questionTitle {
-    font-size: 24px;
-    letter-spacing: 5px;
-}
-#questionOne, #questionTwe{
-    display: none;
-}
-#answer {
-    display: none;
-    color: white;
-    /* text-align: center; */
-    font-size: 24px;
-    position: absolute;
-    bottom: 30%;
-    right: 20%;
-    letter-spacing: 5px;
-    background-color: var(--blue);
-    border-radius: 10px;
-    padding: 10px 20px;
-    z-index: 3;
-}
-
-#answer button{
-    background-color: var(--lightblue);
-    color: var(--blue);
-    width: 200px;
-    outline: none;
-    border-radius: 5px;
-    margin-top: 5px;
-    margin-left: 30px;
-    border: 2px solid var(--blue);
-}
-#answer button:hover{
-    background-color: var(--blue);
-    color: white;
-    border: 2px solid var(--lightblue);
-}
-
-
-#result{
-    /* display: none; */
-    padding-left: 68px;
-}
-
-.nextQuextion{
-    /* display: none; */
-    outline: none;
-    color: var(--blue);
-    background-color: var(--lightblue);
-    border: none;
-    border-radius: 5px;
-    padding: 0px 20px;
-}
-
-
-
-#itinerary{
-    display: flex;
-    /* border: black 2px solid; */
-    margin: 0 auto;
-    height: 500px;
-}
-
-.itineraryList{
-    position: absolute;
-    left: 50%; 
-    width: 525px;
-    /* background-color: red; */
-}
-
-#itinerary img{
-    width: 45%;
-}
-
-#changeItinerary{
-    width: 525px;
-    background-color: var(--blue);
-    border-radius: 5px;
-}
-
-#changeToitinerary1,#changeToitinerary2{
-    outline: none;
-    border: none;
-    background-color: var(--lightblue);
-    color: var(--blue);
-    width: 250px;
-    height: 50px;
-    font-size: 24px;
-    margin: 5px;
-    border-radius: 5px;
-}
-
-#itinerary2{
-    display: none;
-}
-
-#itinerary img{
-    position: absolute;
-    bottom: 20px;
-}
-
-#changeToitinerary2{
-    background-color: var(--blue);
-    color: white;
-}
-
-#byTrain{
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-}
-
-#fromTokyobyTrain , #fromOsakabyTrain1 , #fromOsakabyTrain2{
-    width: 70%;
-    display: flex;
-    /* justify-content: center; */
-    justify-content: space-between;
-    align-items: center;
+    }
     
-}
+    
+    /* ------------------------------- Q＆A */
+    #yamabikoMountain{
+        position: absolute;
+        bottom: 0px;
+        left: 0px;
+        height: 600px;
+        z-index: 1;
+    }
+    #yamabikoHiker{
+        position: absolute;
+        bottom: 0px;
+        right: 0px;
+        height: 400px;
+        z-index: 2;
+    }
+    #QAinfo {
+        color: var( --blue );
+        text-align: center;
+        font-size: 24px;
+        position: absolute;
+        top: 12%;
+        left: 0px;
+        right: 0px;
+        margin: 0 auto;
+        letter-spacing: 5px;
+    }
+    #question{
+        display: none;
+        position: absolute;
+        height: 60px;
+        width: 650px;
+        color: white;
+        text-align: left;
+        font-size: 24px;
+        top: 35%;
+        left: 30%;
+        letter-spacing: 5px;
+        background-color: var(--blue);
+        border-radius: 10px;
+        padding: 10px 20px;
+        z-index: 3;
+    }
+    
+    .questionTitle {
+        font-size: 24px;
+        letter-spacing: 5px;
+    }
+    #questionOne, #questionTwe{
+        display: none;
+    }
+    #answer {
+        display: none;
+        color: white;
+        font-size: 24px;
+        position: absolute;
+        bottom: 30%;
+        right: 20%;
+        letter-spacing: 5px;
+        background-color: var(--blue);
+        border-radius: 10px;
+        padding: 10px 20px;
+        z-index: 3;
+    }
+    
+    #answer button{
+        background-color: var(--lightblue);
+        color: var(--blue);
+        width: 200px;
+        outline: none;
+        border-radius: 5px;
+        margin-top: 5px;
+        margin-left: 30px;
+        border: 2px solid var(--blue);
+    }
+    #answer button:hover{
+        background-color: var(--blue);
+        color: white;
+        border: 2px solid var(--lightblue);
+    }
+    #result{
+        padding-left: 68px;
+        color: yellow;
+    }
+    .nextQuextion{
+        outline: none;
+        color: var(--blue);
+        background-color: var(--lightblue);
+        border: none;
+        border-radius: 5px;
+        padding: 0px 20px;
+    }
+    
+    
+    /* ------------------------------- itinerary */
+    #itinerary{
+        display: flex;
+        /* border: black 2px solid; */
+        margin: 0 auto;
+        height: 500px;
+    }
+    
+    .itineraryList{
+        position: absolute;
+        left: 50%; 
+        width: 525px;
+        /* background-color: red; */
+    }
+    
+    #itinerary img{
+        width: 45%;
+    }
+    
+    #changeItinerary{
+        width: 525px;
+        background-color: var(--blue);
+        border-radius: 5px;
+    }
+    
+    #changeToitinerary1,#changeToitinerary2{
+        outline: none;
+        border: none;
+        background-color: var(--lightblue);
+        color: var(--blue);
+        width: 250px;
+        height: 50px;
+        font-size: 24px;
+        margin: 5px;
+        border-radius: 5px;
+    }
+    
+    #itinerary2{
+        display: none;
+    }
+    
+    #itinerary img{
+        position: absolute;
+        bottom: 20px;
+    }
+    
+    #changeToitinerary2{
+        background-color: var(--blue);
+        color: white;
+    }
+    
+    #byTrain{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+    
+    #fromTokyobyTrain , #fromOsakabyTrain1 , #fromOsakabyTrain2{
+        width: 70%;
+        display: flex;
+        /* justify-content: center; */
+        justify-content: space-between;
+        align-items: center;
+        
+    }
+    
+    
+    #byTrain p{
+        border: var(--lightblue) 2px solid;
+        padding: 5px;
+        border-radius: 5px;
+        margin: 10px 10px;
+    }
+    
+    #byTrain .trainInfo p{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        position: relative;
+        border: none;
+        margin: 0;
+        padding: 0;
+    }
+    .trafficWay::after{
+        content: "";
+        width: 120%;
+        height: 5px;
+        background-color: var(--blue);
+        position: absolute;
+        top:-2px;
+    }
+    
+    /* section2-photoslide */
+    .fp-controlArrow {
+        top: 99%;
+        /* border-color: rgba(255, 255, 255,0.8); */
+    }
+    
+    .fp-controlArrow.fp-prev {
+        left: 96%;
+        border-width: 17.5px 25px 17.5px 0px;
+        border-color: transparent rgba(255, 255, 255,0.8) transparent transparent;
+    }
+    .fp-controlArrow.fp-next {
+        right: 1%;
+        border-width: 17.5px 0px 17.5px 25px;
+        border-color: transparent transparent transparent rgba(255, 255, 255,0.8) ;
+    }
 
+/* ROW Setting */
+    @media (min-width: 1200px) and (max-width: 1579.99px){ 
+        #headerlet , #headergo{
+            width: 20vw;
+            top: 3vh;
+            animation: letgo_l 5s 2s;
+            animation-fill-mode:forwards; 
+        }
+        #headerlet{
+            left: 3vw;
+        }
+        #headergo{
+            left: 12vw;
+        }
+        @keyframes letgo_l {
+            0% {opacity: 0;}
+            40% {opacity: 0;}
+            100% {opacity: 1;}
+        }
+        
+        #fujimountain{
+            width: 100%;
+            right: 0;
+            left: 0;
+            margin: 0 auto;
+        }
+        #sun{
+            width: 50vw;
+            bottom: -40vh;
+            animation: SunRise_l 5s 2s;
+            animation-fill-mode:forwards;
+        }
+        @keyframes SunRise_l {
+            from { bottom: -30vh; }
+            to { bottom: 5vh; }
+        }
+        #shinkansen{
+            right: -100vw;
+            animation: Rail 7s 2s ;
+            animation-fill-mode:forwards;
+        }
+        @keyframes Rail {
+            from { right: -100vw; }
+            to { right: 100vw; }
+        }
+    
+    .fp-controlArrow.fp-prev {
+        left: 93%;
+    }
+    .fp-controlArrow.fp-next {
+        right: 1%;
+    }
+    }
+    
+    @media (min-width: 770px) and (max-width: 1199.99px) { 
+        #headerlet , #headergo{
+            width: 28vw;
+            animation: letgo_m 5s 2s;
+            animation-fill-mode:forwards; 
+        }
+        #headerlet{
+            left: 5vw;
+            top: 3vh;
+        }
+        #headergo{
+            left: 15vw;
+            top: 7vh;
+        }
+        @keyframes letgo_m {
+            0% {opacity: 0;}
+            40% {opacity: 0;}
+            100% {opacity: 1;}
+        }
+        #fujimountain{
+            width: 100%;
+            right: 0;
+            left: 0;
+            margin: 0 auto;
+        }
+        #sun{
+            width: 50vw;
+            bottom: -30vh;
+            animation: SunRise_m 5s 2s;
+            animation-fill-mode:forwards;
+        }
+        @keyframes SunRise_m {
+            from { bottom: -30vh; }
+            to { bottom: 8vh; }
+        }
+        #shinkansen{
+            right: -165%;
+            animation: Rail_m 7s 2s ;
+            animation-fill-mode:forwards;
+        }
+        @keyframes Rail_m {
+            from { right: -165%; }
+            to { right: 100vw; }
+        }
+        #photoslide p{
+            font-size: 24px;
+            width: 100%;
+            top: 150px;
+        }
+        #photoslide p::after {
+            content: '';
+            width: 3px;
+            height: 28px;
+            bottom:10px;
+        }
+    }
+    
+    @media (min-width: 576px) and (max-width: 769.99px) { 
+        #headerlet , #headergo{
+            width: 50vw;
+            transform: rotate(12.5deg);
+            animation: letgo_m 5s 2s;
+            animation-fill-mode:forwards; 
+        }
+        /* #headerlet{
+            left: 5vw;
+            top: 3vh;
+        }
+        #headergo{
+            left: 15vw;
+            top: 7vh;
+        } */
+        #headerlet{
+            left: 15vw;
+            top: 13vh;
+        }
+        #headergo{
+            top: 20vh;
+            left: 35vw;
+        }
+        @keyframes letgo_m {
+            0% {opacity: 0;}
+            40% {opacity: 0;}
+            100% {opacity: 1;}
+        }
+        #fujimountain{
+            width: 100%;
+            right: 0;
+            left: 0;
+            margin: 0 auto;
+        }
+        #sun{
+            width: 50vw;
+            bottom: -30vh;
+            animation: SunRise_m 5s 2s;
+            animation-fill-mode:forwards;
+        }
+        @keyframes SunRise_m {
+            from { bottom: -30vh; }
+            to { bottom: 8vh; }
+        }
+        #shinkansen{
+            right: -165%;
+            animation: Rail_m 7s 2s ;
+            animation-fill-mode:forwards;
+        }
+        @keyframes Rail_m {
+            from { right: -165%; }
+            to { right: 100vw; }
+        }
 
-#byTrain p{
-    border: var(--lightblue) 2px solid;
-    padding: 5px;
-    border-radius: 5px;
-    margin: 10px 10px;
-}
+        /* section2-photoslide */
+        #photoslide p{
+            font-size: 24px;
+            width: 100%;
+            top: 150px;
+        }
+        #photoslide p::after {
+            content: '';
+            width: 3px;
+            height: 28px;
+            bottom:10px;
+        }
+        .fp-controlArrow.fp-prev {
+            left: 90%;
+        }
+        .fp-controlArrow.fp-next {
+            right: 1%;
+        }
 
-#byTrain .trainInfo p{
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    position: relative;
-    border: none;
-    margin: 0;
-    padding: 0;
-}
-.trafficWay::after{
-    content: "";
-    width: 120%;
-    height: 5px;
-    background-color: var(--blue);
-    position: absolute;
-    top:-2px;
-}
-
-
-.fp-controlArrow {
-    top: 99%;
-    /* border-color: rgba(255, 255, 255,0.8); */
-}
-
-.fp-controlArrow.fp-prev {
-    left: 93%;
-    border-width: 17.5px 25px 17.5px 0px;
-    border-color: transparent rgba(255, 255, 255,0.8) transparent transparent;
-}
-.fp-controlArrow.fp-next {
-    right: 1%;
-    border-width: 17.5px 0px 17.5px 25px;
-    border-color: transparent transparent transparent rgba(255, 255, 255,0.8) ;
-}
+        /* ------------------------------- Q＆A */
+        #yamabikoMountain{
+            height: 500px;
+        }
+        #yamabikoHiker{
+            height: 300px;
+        }
+        #question{
+            font-size: 18px;
+            left: 20%;
+            width: 70%;
+        }
+        #answer {
+            font-size: 18px;
+            width: 30%;
+            bottom: 20%;
+            right: 30%;
+            padding: 5px 15px;
+        }
+        #answer button{
+            position: relative;
+            top:-10px;
+            width: 70%;
+            margin-top: 5px;
+        }
+        #result{
+            padding-left: 58px;
+        }
+    }
+    
+    
+    @media (max-width: 575.99px) { 
+        h3 {
+            font-size: 24px;
+        }
+        #headerlet , #headergo{
+            width: 50vw;
+            transform: rotate(12.5deg);
+            animation: letgo_s 5s 2s;
+            animation-fill-mode:forwards; 
+        }
+        #headerlet{
+            left: 15vw;
+            top: 13vh;
+        }
+        #headergo{
+            top: 20vh;
+            left: 35vw;
+        }
+        @keyframes letgo_s {
+            0% {opacity: 0;}
+            40% {opacity: 0;}
+            100% {opacity: 1;}
+        }
+        #fujimountain{
+            width: 180%;
+            right: -40vw;
+        }
+        #sun{    
+            width: 80vw;
+            bottom: -20vh;
+            animation: SunRise_s 5s 2s;
+            animation-fill-mode:forwards;
+        }
+        @keyframes SunRise_s {
+            from { bottom: -20vh; }
+            to { bottom: 8vh; }
+        }
+        #shinkansen{
+            right: -200%;
+            animation: Rail_s 7s 2s ;
+            animation-fill-mode:forwards;
+        }
+        @keyframes Rail_s {
+            from { right: -200%; }
+            to { right: 100vw; }
+        }
+        #fujiLivecamera{
+            width: 312px;
+            height: 175.5px;
+        }
+        /* ------------------------------- section2-photoslide */
+        #photoslide p{
+            font-size: 14px;
+            width: 220px;
+            top: 120px;
+            
+        }
+        #photoslide p::after {
+            content: '';
+            width: 2px;
+            height: 15px;
+            bottom:8px;
+        }
+        .fp-controlArrow.fp-prev {
+            left: 80%;
+        }
+        .fp-controlArrow.fp-next {
+            right: 1%;
+        }
+        /* ------------------------------- Info */
+        .infopage{
+            display: flex;
+            flex-direction: column;
+            font-size: 13px;
+            width: 80%;
+            top: 90px;
+        }
+        .infopage .col-6{
+            max-width: 100%;
+            margin-bottom: 30px;
+        }
+        /* ------------------------------- To Do or Not */
+        #TodoOrNotCards{
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            margin-top: 50px;
+        }
+        #TodoCard , #NotdoCard{
+            max-width: 70%;
+            margin: 5px;
+            padding: 0;
+        }
+        #TodoOrNotCards .card-img-top{
+            width: 75%;
+        }
+        #TodoOrNotCards .card-title {
+            font-size: 20px;
+        }
+        #TodoOrNotCards .btn , #TodoOrNotCards .card-text {
+            font-size: 16px;
+        }
+        #TodoOrNotCards .card-body{
+            width: 100%;
+            padding: 0px 0px;
+            margin: 10px 0px;
+        }
+        /* ------------------------------- Q＆A */
+        #yamabikoMountain{
+            height: 300px;
+            left: -50px;
+        }
+        #yamabikoHiker{
+            height: 200px;
+        }
+        
+        #QAinfo {
+            font-size: 16px;
+            width: 80%;
+        }
+        #question{
+            font-size: 16px;
+            left: 20%;
+            width: 70%;
+        }
+        #answer {
+            font-size: 16px;
+            width: 50%;
+            bottom: 15%;
+            right: 35%;
+            padding: 5px 15px;
+        }
+        #answer button{
+            position: relative;
+            top:-10px;
+            width: 70%;
+            margin-top: 5px;
+        }
+        #result{
+            position: relative;
+            top:-10px;
+            padding-left: 30px;
+        }
+    }

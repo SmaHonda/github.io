@@ -190,11 +190,15 @@ let questionssss=[
         answer : false,
     },
     {
-        Questions : 'Q3：富士山6月開始融雪嗎' ,
+        Questions : 'Q3：富士山山頂夏天的氣溫都在30度以上嗎？' ,
+        answer : false,
+    },
+    {
+        Questions : 'Q4：吉田路線的指標顏色是黃色嗎？' ,
         answer : true,
     },
     {
-        Questions : 'Q4：富士山12月開始下雪嗎' ,
+        Questions : 'Q5：到五合目不用適應高度就可以直接登山？' ,
         answer : false,
     }
 
@@ -230,7 +234,7 @@ function nono(){
 // 下一題同樣O X的按鈕進行問題回答
 function judgment(){
     //判斷現在第幾題，不是最後一題，答對都要出現下一題按鈕
-    if(i<3){
+    if(i<4){
         if (temp == questionssss[i].answer){
             // 如果正確，出現文字答對了及下一題的按鈕
             $('#result').text("答對了！");
@@ -251,7 +255,7 @@ function judgment(){
         //最後一題答對後，不出現下一題按鈕
         if (temp == questionssss[i].answer){
             // 如果答對，出現文字答對了！恭喜過關
-            $('#result').text("答對了！恭喜過關");
+            $('#result').text("答對了！恭喜過關～可以去爬富士山啦！");
             // i = 0 ;
         }else{
             //如果答錯，出現答錯了，畫面不動
@@ -280,6 +284,24 @@ $('#changeToitinerary2').click(function(){
 })
 
 
+
+
+let photoShow = [
+    { 
+    itinerary : $('#itineraryImg') ,
+    photos : './img/bg2.jpg'
+    },
+]
+
 $('#itinerary1X1').hover(function(){
     $('#itineraryImg').prop('src','./img/bg2.jpg');
 })
+
+// $('#itinerary1X1').hover(function(){
+//     $('#itineraryImg').prop('src','./img/bg2.jpg');
+// })
+
+//滑鼠進入各別行程區域
+//圖片更換為指定的圖片
+
+
