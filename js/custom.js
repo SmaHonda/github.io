@@ -70,53 +70,77 @@ $('#sun').prop('src', `./img/1x/sun${Math.floor(Math.random() * 3 + 1)}.png`)
 
 
 var yoshida = {
-    recommendTo: "新手",
-    upTime: "5.8 公里，約6小時25分",
-    downTime: "6.9 公里，約3小時40分",
-    altitude: "2300m",
+    recommendTo: "./img/新手.png",
+    upTime: "約6小時25分",
+    downTime: "約3小時40分",
+    altitude: "約2,300m",
+    info:" <li>吉田路線的登山口位於山梨縣、地處富士山東北側。</li><li>上山道經過的山屋較多，下山道則比較少。</li><li>上山與下山的路線分開，雖然路線分開，但在熱門時間登山道還是有擁擠人潮！</li><li>登山路線位於東北側，不用到山頂也可以欣賞御萊光。</li><li>因為交通便利、沿途山屋數量最多，是最受登山客歡迎的路線，每年有超過一半的登山者選擇吉田路線。</li>"
 };
 
 $('#yoshida').on('click', function () {
-    $("#trailsRecommend>p:nth-child(1)>span").text(yoshida.recommendTo);
+    $('#trailsInfo').html(yoshida.info);
+    $("#trailsRecommend>p:nth-child(1)>img").attr('src',yoshida.recommendTo);
     $("#trailsRecommend>p:nth-child(2)>span").text(yoshida.upTime);
     $("#trailsRecommend>p:nth-child(3)>span").text(yoshida.downTime);
     $("#trailsRecommend>p:nth-child(4)>span").text(yoshida.altitude);
+    $('#yoshida').css('width','250px');
+    $('#gotemba').css('width','200px');
+    $('#subashiri').css('width','200px');
+    $('#fujinomiya').css('width','200px');
 })
 var subashiri = {
-    recommendTo: "高手",
+    recommendTo: "./img/高手.png",
     upTime: "約7小時",
     downTime: "約3小時40分",
-    altitude: "2000m",
+    altitude: "約2,000m",
+    info:"<li>須走路線的登山口位於靜岡、地處富士山東側。穿過林帶之後，可以從任何地方看到御萊光。</li><li>須走路線從本八合目後會與「吉田路線」匯合。</li><li>上山與下山的路線分開，下山時可以體驗「流沙」。</li><li>晚上在森林地帶很容易迷路，要小心安全。</li>",
 };
 $('#subashiri').on('click', function () {
-    $("#trailsRecommend>p:nth-child(1)>span").text(subashiri.recommendTo);
+    $('#trailsInfo').html(subashiri.info);
+    $("#trailsRecommend>p:nth-child(1)>img").attr('src',subashiri.recommendTo);
     $("#trailsRecommend>p:nth-child(2)>span").text(subashiri.upTime);
     $("#trailsRecommend>p:nth-child(3)>span").text(subashiri.downTime);
     $("#trailsRecommend>p:nth-child(4)>span").text(subashiri.altitude);
+    $('#yoshida').css('width','200px');
+    $('#gotemba').css('width','200px');
+    $('#subashiri').css('width','250px');
+    $('#fujinomiya').css('width','200px');
 })
 var gotemba = {
-    recommendTo: "高手",
+    recommendTo: "./img/高手.png",
     upTime: "約8小時15分",
     downTime: "約4小時30分",
-    altitude: "1440m",
+    altitude: "約1,440m",
+    info: "<li>御殿場路線的登山口位於從靜岡、地處富士山東南側。</li><li>御殿場從登山口到山頂的高度差最大，步行距離也最長。與其他路線相比，沿路山屋較少、適合有登山經驗的登山者。</li><li>登山者較少可以享受安靜的登山，但路線上目標物很少，需要注意視線，不要在夜間或濃霧中迷路囉。 </li>",
 };
 $('#gotemba').on('click', function () {
-    $("#trailsRecommend>p:nth-child(1)>span").text(gotemba.recommendTo);
+    $('#trailsInfo').html(gotemba.info);
+    $("#trailsRecommend>p:nth-child(1)>img").attr('src',gotemba.recommendTo);
     $("#trailsRecommend>p:nth-child(2)>span").text(gotemba.upTime);
     $("#trailsRecommend>p:nth-child(3)>span").text(gotemba.downTime);
     $("#trailsRecommend>p:nth-child(4)>span").text(gotemba.altitude);
+    $('#yoshida').css('width','200px');
+    $('#gotemba').css('width','250px');
+    $('#subashiri').css('width','200px');
+    $('#fujinomiya').css('width','200px');
 })
 var fujinomiya = {
-    recommendTo: "新手",
-    upTime: "3.7 公里，約5小時45分",
-    downTime: "3.7 公里，約3小時50分",
-    altitude: "2400m",
+    recommendTo: "./img/新手.png",
+    upTime: "約5小時45分",
+    downTime: "約3小時50分",
+    altitude: "約2,400m",
+    info:" <li>富士宮路線的登山口位於靜岡、地處富士山南側，且富士宮登山口的海拔為所有路線最高。<li>是所有路線中海拔差最低、步行距離最短的路線。</li><li>沿途設置的山屋距離幾乎相等，方便登山者於登山途中休息。</li><li>上山與下山的路線一樣，所以不容易迷路，整體坡度較陡，岩石較多，且人多時相對比較擁擠。</li><li>熱門度僅次於吉田路線！</li>"
 };
 $('#fujinomiya').on('click', function () {
-    $("#trailsRecommend>p:nth-child(1)>span").text(fujinomiya.recommendTo);
+    $('#trailsInfo').html(fujinomiya.info);
+    $("#trailsRecommend>p:nth-child(1)>img").attr('src',fujinomiya.recommendTo);
     $("#trailsRecommend>p:nth-child(2)>span").text(fujinomiya.upTime);
     $("#trailsRecommend>p:nth-child(3)>span").text(fujinomiya.downTime);
     $("#trailsRecommend>p:nth-child(4)>span").text(fujinomiya.altitude);
+    $('#yoshida').css('width','200px');
+    $('#gotemba').css('width','200px');
+    $('#subashiri').css('width','200px');
+    $('#fujinomiya').css('width','250px');
 })
 
 
@@ -256,7 +280,7 @@ function judgment() {
         //最後一題答對後，不出現下一題按鈕
         if (temp == questionssss[i].answer) {
             // 如果答對，出現文字答對了！恭喜過關
-            $('#result').text("答對了！恭喜過關～可以去爬富士山啦！");
+            $('#result').text("答對了！恭喜過關～可以去登富士山啦！");
             // i = 0 ;
         } else {
             //如果答錯，出現答錯了，畫面不動
@@ -287,16 +311,69 @@ $('#changeToitinerary2').click(function () {
 
 
 
-let photoShow = [
-    {
-        itinerary: $('#itineraryImg'),
-        photos: './img/bg2.jpg'
-    },
-]
+
+$('#itinerary2X1').hover(function () {
+    $('#itineraryImg').prop('src', './img/camera_2_1.jpg');
+})
+$('#itinerary2X2').hover(function () {
+    $('#itineraryImg').prop('src', './img/camera_2_2.jpg');
+})
+$('#itinerary2X3').hover(function () {
+    $('#itineraryImg').prop('src', './img/camera_2_3.jpg');
+})
+$('#itinerary2X4').hover(function () {
+    $('#itineraryImg').prop('src', './img/camera_2_4.jpg');
+})
+$('#itinerary2X5').hover(function () {
+    $('#itineraryImg').prop('src', './img/camera_2_5.jpg');
+})
+$('#itinerary2X6').hover(function () {
+    $('#itineraryImg').prop('src', './img/camera_2_6.jpg');
+})
+$('#itinerary2X7').hover(function () {
+    $('#itineraryImg').prop('src', './img/camera_2_7.jpg');
+})
+$('#itinerary2X8').hover(function () {
+    $('#itineraryImg').prop('src', './img/camera_2_8.jpg');
+})
+$('#itinerary2X9').hover(function () {
+    $('#itineraryImg').prop('src', './img/camera_2_9.jpg');
+})
+$('#itinerary2X10').hover(function () {
+    $('#itineraryImg').prop('src', './img/camera_2_10.jpg');
+})
 
 $('#itinerary1X1').hover(function () {
-    $('#itineraryImg').prop('src', './img/bg2.jpg');
+    $('#itineraryImg').prop('src', './img/camera_1_1.jpg');
 })
+$('#itinerary1X2').hover(function () {
+    $('#itineraryImg').prop('src', './img/camera_1_2.jpg');
+})
+$('#itinerary1X3').hover(function () {
+    $('#itineraryImg').prop('src', './img/camera_1_3.jpg');
+})
+$('#itinerary1X4').hover(function () {
+    $('#itineraryImg').prop('src', './img/camera_1_4.jpg');
+})
+$('#itinerary1X5').hover(function () {
+    $('#itineraryImg').prop('src', './img/camera_1_5.jpg');
+})
+$('#itinerary1X6').hover(function () {
+    $('#itineraryImg').prop('src', './img/camera_1_6.jpg');
+})
+$('#itinerary1X7').hover(function () {
+    $('#itineraryImg').prop('src', './img/camera_1_7.jpg');
+})
+$('#itinerary1X8').hover(function () {
+    $('#itineraryImg').prop('src', './img/camera_1_8.jpg');
+})
+$('#itinerary1X9').hover(function () {
+    $('#itineraryImg').prop('src', './img/camera_1_9.jpg');
+})
+$('#itinerary1X10').hover(function () {
+    $('#itineraryImg').prop('src', './img/camera_1_10.jpg');
+})
+
 
 // $('#itinerary1X1').hover(function(){
 //     $('#itineraryImg').prop('src','./img/bg2.jpg');
@@ -304,5 +381,34 @@ $('#itinerary1X1').hover(function () {
 
 //滑鼠進入各別行程區域
 //圖片更換為指定的圖片
+
+
+
+
+//自訂排序方式
+$('#AllSort').click(function(){
+    $('#fromTokyobyTrain').fadeIn();
+    $('#fromTokyobyBus1').fadeIn();
+    $('#fromTokyobyBus2').fadeIn();
+    $('#fromOsakabyTrain1').fadeIn();
+    $('#fromOsakabyTrain2').fadeIn();
+    $('#fromOsakabyBus2').fadeIn();
+})
+$('#TokyoSort').click(function(){
+    $('#fromTokyobyTrain').fadeIn();
+    $('#fromTokyobyBus1').fadeIn();
+    $('#fromTokyobyBus2').fadeIn();
+    $('#fromOsakabyTrain1').hide();
+    $('#fromOsakabyTrain2').hide();
+    $('#fromOsakabyBus2').hide();
+})
+$('#OsakaSort').click(function(){
+    $('#fromTokyobyTrain').hide();
+    $('#fromTokyobyBus1').hide();
+    $('#fromTokyobyBus2').hide();
+    $('#fromOsakabyTrain1').fadeIn();
+    $('#fromOsakabyTrain2').fadeIn();
+    $('#fromOsakabyBus2').fadeIn();
+})
 
 
